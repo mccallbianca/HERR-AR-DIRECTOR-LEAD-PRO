@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ECQO Sound — Lead Producer Brief v4</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;color:#1a1a1a;background:#FAFAF8;line-height:1.6;font-size:15px}
+@media(prefers-color-scheme:dark){body{background:#0A0A0F;color:#F4F1EB}}
+.site-header{background:#0A0A0F;padding:20px 0;border-bottom:1px solid rgba(196,45,142,.3)}
+.site-header .inner{max-width:900px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:#fff}
+.logo span{color:#C42D8E}
+.htag{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:#6B6880}
+.hero{background:#0A0A0F;padding:72px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 65% 45%,rgba(196,45,142,.12),transparent 65%),radial-gradient(ellipse 40% 40% at 15% 80%,rgba(45,37,97,.3),transparent 60%)}
+.hero .inner{max-width:900px;margin:0 auto;padding:0 32px;position:relative;z-index:2}
+.hero-eyebrow{font-family:'DM Mono',monospace;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:#C42D8E;margin-bottom:20px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;color:#fff;line-height:1.05;margin-bottom:20px}
+.hero-title em{color:#C42D8E;font-style:italic}
+.hero-body{font-size:1.05rem;color:rgba(244,241,235,.72);max-width:640px;line-height:1.8;margin-bottom:40px}
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.06);margin-top:48px;border:1px solid rgba(255,255,255,.06)}
+.hs{padding:22px 16px;background:#0A0A0F;text-align:center}
+.hs-val{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;color:#fff;line-height:1}
+.hs-val span{color:#C42D8E}
+.hs-lbl{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#6B6880;margin-top:6px}
+@media(max-width:580px){.hero-stats{grid-template-columns:repeat(2,1fr)}}
+.main{max-width:900px;margin:0 auto;padding:60px 32px 80px}
+h2{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:400;margin:2.5rem 0 .75rem;color:#0A0A0F;line-height:1.2}
+@media(prefers-color-scheme:dark){h2{color:#F4F1EB}}
+h3{font-size:1rem;font-weight:600;margin:1.75rem 0 .6rem;color:#0A0A0F}
+@media(prefers-color-scheme:dark){h3{color:#F4F1EB}}
+p{color:#4A4A52;margin-bottom:.8rem;line-height:1.8}
+@media(prefers-color-scheme:dark){p{color:rgba(244,241,235,.7)}}
+.ey{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:#C42D8E;margin-bottom:8px;display:block}
+.div{height:1px;background:linear-gradient(90deg,transparent,rgba(196,45,142,.25),transparent);margin:3.5rem 0}
+.card{background:#fff;border:0.5px solid #E0DDD6;border-radius:14px;padding:1.5rem;margin-bottom:1rem}
+@media(prefers-color-scheme:dark){.card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}}
+.hl{background:#FDF5FA;border-left:3px solid #C42D8E;padding:18px 22px;border-radius:0 10px 10px 0;margin:1.5rem 0}
+@media(prefers-color-scheme:dark){.hl{background:rgba(196,45,142,.08)}}
+.hl p{margin:0;font-size:13.5px;color:#3A3A42;line-height:1.75}
+@media(prefers-color-scheme:dark){.hl p{color:rgba(244,241,235,.85)}}
+.hl p+p{margin-top:10px}
+.hl-green{background:#F0FBF4;border-left:3px solid #1D9E75}
+@media(prefers-color-scheme:dark){.hl-green{background:rgba(29,158,117,.08)}}
+.hl-green p{color:#085041}
+@media(prefers-color-scheme:dark){.hl-green p{color:rgba(159,225,203,.9)}}
+.hl-amber{background:#FDF8EE;border-left:3px solid #BA7517}
+@media(prefers-color-scheme:dark){.hl-amber{background:rgba(186,117,23,.1)}}
+.hl-amber p{color:#633806}
+@media(prefers-color-scheme:dark){.hl-amber p{color:rgba(250,199,117,.9)}}
+.hl-red{background:#FEF2F2;border-left:3px solid #A32D2D}
+@media(prefers-color-scheme:dark){.hl-red{background:rgba(163,45,45,.1)}}
+.hl-red p{color:#501313}
+@media(prefers-color-scheme:dark){.hl-red p{color:rgba(240,149,149,.9)}}
+.conv-box{background:#F0F7FF;border:1px solid rgba(26,58,143,.2);border-radius:14px;padding:1.5rem 1.75rem;margin:2rem 0}
+@media(prefers-color-scheme:dark){.conv-box{background:rgba(26,58,143,.12);border-color:rgba(26,58,143,.3)}}
+.conv-label{font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:#185FA5;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+@media(prefers-color-scheme:dark){.conv-label{color:#6EA0E0}}
+.conv-title{font-size:1.1rem;font-weight:600;color:#0C447C;margin-bottom:10px}
+@media(prefers-color-scheme:dark){.conv-title{color:#B5D4F4}}
+.conv-box p{font-size:14px;color:#185FA5;margin-bottom:0;line-height:1.8}
+@media(prefers-color-scheme:dark){.conv-box p{color:rgba(181,212,244,.85)}}
+.aq{background:#F4F1EB;border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:12px}
+@media(prefers-color-scheme:dark){.aq{background:rgba(255,255,255,.05)}}
+.aq-q{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#C42D8E;font-weight:600;margin-bottom:8px}
+.aq-a{font-size:14px;color:#3A3A42;line-height:1.75}
+@media(prefers-color-scheme:dark){.aq-a{color:rgba(244,241,235,.8)}}
+.aq-a strong{color:#0A0A0F}
+@media(prefers-color-scheme:dark){.aq-a strong{color:#fff}}
+.fs{display:flex;gap:18px;padding:18px 0;border-bottom:0.5px solid #E8E4DC}
+@media(prefers-color-scheme:dark){.fs{border-color:rgba(255,255,255,.06)}}
+.fs:last-child{border-bottom:none}
+.fsn{width:34px;height:34px;border-radius:50%;background:#F4F1EB;border:0.5px solid #D0CDCA;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;flex-shrink:0;margin-top:2px;color:#C42D8E}
+@media(prefers-color-scheme:dark){.fsn{background:rgba(196,45,142,.12);border-color:rgba(196,45,142,.3)}}
+.fst{font-size:14px;font-weight:600;margin-bottom:5px;color:#0A0A0F}
+@media(prefers-color-scheme:dark){.fst{color:#F4F1EB}}
+.fsb{font-size:13px;color:#666;line-height:1.7}
+@media(prefers-color-scheme:dark){.fsb{color:rgba(244,241,235,.6)}}
+.fso{display:inline-block;margin-top:8px;padding:3px 10px;background:#E1F5EE;color:#0F6E56;border-radius:4px;font-size:12px;font-weight:500}
+.can-do{background:#F0FBF4;border:1px solid rgba(29,158,117,.2);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:10px}
+.can-title{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#1D9E75;font-weight:600;margin-bottom:10px}
+.can-item{display:flex;align-items:flex-start;gap:10px;padding:5px 0;font-size:13.5px;color:#085041;line-height:1.6}
+@media(prefers-color-scheme:dark){.can-item{color:rgba(159,225,203,.85)}}
+.cannot-do{background:#FEF2F2;border:1px solid rgba(163,45,45,.2);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:10px}
+.cannot-title{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#A32D2D;font-weight:600;margin-bottom:10px}
+.cannot-item{display:flex;align-items:flex-start;gap:10px;padding:5px 0;font-size:13.5px;color:#501313;line-height:1.6}
+@media(prefers-color-scheme:dark){.cannot-item{color:rgba(240,149,149,.85)}}
+.layer3-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:1.5rem 0}
+@media(max-width:580px){.layer3-grid{grid-template-columns:1fr}}
+.intensity-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:1.5rem 0}
+@media(max-width:580px){.intensity-grid{grid-template-columns:1fr}}
+.intensity-card{border-radius:14px;padding:1.25rem;border:0.5px solid #E0DDD6}
+.intensity-card.mild{background:#F0FBF4;border-color:rgba(29,158,117,.25)}
+.intensity-card.moderate{background:#FDF8EE;border-color:rgba(186,117,23,.25)}
+.intensity-card.deep{background:#FDF5FA;border-color:rgba(196,45,142,.25)}
+@media(prefers-color-scheme:dark){.intensity-card{border-color:rgba(255,255,255,.08)}}
+@media(prefers-color-scheme:dark){.intensity-card.mild{background:rgba(29,158,117,.08)}}
+@media(prefers-color-scheme:dark){.intensity-card.moderate{background:rgba(186,117,23,.08)}}
+@media(prefers-color-scheme:dark){.intensity-card.deep{background:rgba(196,45,142,.08)}}
+.int-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+.int-label.mild{color:#1D9E75}
+.int-label.moderate{color:#BA7517}
+.int-label.deep{color:#C42D8E}
+.int-title{font-size:14px;font-weight:600;margin-bottom:8px}
+.mild .int-title{color:#085041}
+.moderate .int-title{color:#633806}
+.deep .int-title{color:#9A1F6E}
+@media(prefers-color-scheme:dark){.mild .int-title,.moderate .int-title,.deep .int-title{color:#F4F1EB}}
+.int-body{font-size:12.5px;line-height:1.65}
+.mild .int-body{color:#0F6E56}
+.moderate .int-body{color:#854F0B}
+.deep .int-body{color:#7B2D8B}
+@media(prefers-color-scheme:dark){.mild .int-body,.moderate .int-body,.deep .int-body{color:rgba(244,241,235,.65)}}
+.int-stat{margin-top:10px;padding-top:10px;border-top:0.5px solid rgba(0,0,0,.08)}
+@media(prefers-color-scheme:dark){.int-stat{border-color:rgba(255,255,255,.08)}}
+.int-stat-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;line-height:1}
+.mild .int-stat-val{color:#1D9E75}
+.moderate .int-stat-val{color:#BA7517}
+.deep .int-stat-val{color:#C42D8E}
+.int-stat-lbl{font-size:11px;color:#888;margin-top:2px}
+table{width:100%;border-collapse:collapse}
+th{text-align:left;padding:10px 14px;background:#F4F1EB;font-size:.68rem;text-transform:uppercase;letter-spacing:.07em;color:#666;font-weight:500}
+@media(prefers-color-scheme:dark){th{background:rgba(255,255,255,.06);color:rgba(244,241,235,.5)}}
+td{padding:11px 14px;border-bottom:0.5px solid #E8E4DC;vertical-align:top;color:#3A3A42;font-size:13.5px}
+@media(prefers-color-scheme:dark){td{border-color:rgba(255,255,255,.06);color:rgba(244,241,235,.8)}}
+tr:last-child td{border-bottom:none}
+tr.feat td{background:#FDF5FA}
+@media(prefers-color-scheme:dark){tr.feat td{background:rgba(196,45,142,.08)}}
+tr.feat td:first-child{border-left:3px solid #C42D8E}
+.pb{display:inline-block;padding:3px 10px;border-radius:20px;font-size:12px;font-weight:500;white-space:nowrap}
+.pb-r{background:#E1F5EE;color:#0F6E56}
+.pb-s{background:#FAEEDA;color:#854F0B}
+.pb-a{background:#FBEAF0;color:#993556}
+.pb-sp{background:#F0EDF8;color:#3C3489}
+.tbadge{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:#C42D8E;color:#fff;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;margin-left:8px}
+.royalty-box{background:#0A0A0F;border-radius:14px;padding:2rem;margin:1.5rem 0;border:1px solid rgba(196,45,142,.2)}
+.royalty-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:#fff;margin-bottom:8px}
+.royalty-sub{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#6B6880;margin-bottom:20px}
+.royalty-row{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:0.5px solid rgba(255,255,255,.08);gap:12px;flex-wrap:wrap}
+.royalty-row:last-child{border-bottom:none}
+.royalty-label{font-size:13.5px;color:rgba(244,241,235,.8)}
+.royalty-val{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#C42D8E;flex-shrink:0}
+.royalty-note{font-size:11.5px;color:#6B6880;margin-top:3px}
+.income-scenario{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:1.5rem 0}
+@media(max-width:580px){.income-scenario{grid-template-columns:1fr}}
+.isc{background:#fff;border:0.5px solid #E0DDD6;border-radius:14px;padding:1.5rem;text-align:center}
+@media(prefers-color-scheme:dark){.isc{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}}
+.isc-member{font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#888;margin-bottom:6px}
+.isc-mrr{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#888;margin-bottom:4px}
+.isc-pool{font-size:12px;color:#888;margin-bottom:12px}
+.isc-earn{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#C42D8E;line-height:1;margin-bottom:4px}
+.isc-earn-lbl{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:#C42D8E}
+.isc-note{font-size:11.5px;color:#888;margin-top:10px;line-height:1.6}
+.prod-model{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:1.5rem 0}
+@media(max-width:580px){.prod-model{grid-template-columns:1fr}}
+.pm{border-radius:14px;padding:1.5rem;border:0.5px solid #E0DDD6}
+@media(prefers-color-scheme:dark){.pm{border-color:rgba(255,255,255,.1)}}
+.pm.lead{background:#C42D8E;border-color:#C42D8E}
+.pm.network{background:#fff}
+@media(prefers-color-scheme:dark){.pm.network{background:rgba(255,255,255,.05)}}
+.pm.ecqo{background:#F4F1EB}
+@media(prefers-color-scheme:dark){.pm.ecqo{background:rgba(255,255,255,.04)}}
+.pm-role{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:6px}
+.pm.lead .pm-role{color:rgba(255,255,255,.6)}
+.pm.network .pm-role{color:#185FA5}
+.pm.ecqo .pm-role{color:#1D9E75}
+.pm-title{font-size:14px;font-weight:600;margin-bottom:10px}
+.pm.lead .pm-title{color:#fff}
+.pm.network .pm-title,.pm.ecqo .pm-title{color:#0A0A0F}
+@media(prefers-color-scheme:dark){.pm.network .pm-title,.pm.ecqo .pm-title{color:#F4F1EB}}
+.pm-item{font-size:12.5px;padding:4px 0;display:flex;gap:8px;line-height:1.5}
+.pm.lead .pm-item{color:rgba(255,255,255,.85)}
+.pm.network .pm-item{color:#4A4A52}
+.pm.ecqo .pm-item{color:#4A4A52}
+@media(prefers-color-scheme:dark){.pm.network .pm-item,.pm.ecqo .pm-item{color:rgba(244,241,235,.65)}}
+.pm-share{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;margin-top:14px;line-height:1}
+.pm.lead .pm-share{color:#fff}
+.pm.network .pm-share{color:#185FA5}
+.pm.ecqo .pm-share{color:#1D9E75}
+.pm-share-lbl{font-size:11px;margin-top:2px}
+.pm.lead .pm-share-lbl{color:rgba(255,255,255,.6)}
+.pm.network .pm-share-lbl{color:#888}
+.pm.ecqo .pm-share-lbl{color:#888}
+.suno-box{background:#0A0A0F;border-radius:14px;padding:1.5rem 1.75rem;margin:1.25rem 0;border:1px solid rgba(196,45,142,.2)}
+.suno-label{font-family:'DM Mono',monospace;font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:#C42D8E;margin-bottom:12px}
+.suno-prompt{font-family:'DM Mono',monospace;font-size:11.5px;color:rgba(244,241,235,.8);line-height:1.8;white-space:pre-wrap;word-break:break-word}
+.suno-note{font-size:12.5px;color:#6B6880;margin-top:14px;line-height:1.65;padding-top:14px;border-top:1px solid rgba(255,255,255,.08)}
+.tier-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:1.5rem 0}
+@media(max-width:580px){.tier-grid{grid-template-columns:1fr}}
+.tier-card{border-radius:14px;padding:1.25rem;border:0.5px solid #E0DDD6}
+@media(prefers-color-scheme:dark){.tier-card{border-color:rgba(255,255,255,.08)}}
+.tier-card.free{background:#FAFAF8}
+@media(prefers-color-scheme:dark){.tier-card.free{background:rgba(255,255,255,.03)}}
+.tier-card.personalized{background:#ffffff;border-color:#C42D8E}
+.tier-card.elite{background:#0A0A0F;border-color:rgba(196,45,142,.4)}
+.tier-name{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:10px;display:block}
+.tier-name.free{color:#888}
+.tier-name.personalized{color:#C42D8E}
+.tier-name.elite{color:#E8388A}
+.tif{font-size:12.5px;padding:5px 0;border-bottom:0.5px solid rgba(0,0,0,.05);display:flex;align-items:flex-start;gap:8px;color:#3A3A42;line-height:1.5}
+@media(prefers-color-scheme:dark){.tif{border-color:rgba(255,255,255,.06);color:rgba(244,241,235,.75)}}
+.tier-card.elite .tif{color:rgba(244,241,235,.8);border-color:rgba(255,255,255,.08)}
+.tif:last-child{border-bottom:none}
+.ck{color:#1D9E75;font-size:12px;flex-shrink:0;margin-top:1px}
+.cx{color:#ccc;font-size:12px;flex-shrink:0;margin-top:1px}
+.check-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:0.5px solid #E8E4DC}
+@media(prefers-color-scheme:dark){.check-item{border-color:rgba(255,255,255,.06)}}
+.check-item:last-child{border-bottom:none}
+.check-item input{margin-top:2px;cursor:pointer;accent-color:#C42D8E;flex-shrink:0;width:14px;height:14px}
+.check-item label{font-size:13px;color:#3A3A42;cursor:pointer;line-height:1.6}
+@media(prefers-color-scheme:dark){.check-item label{color:rgba(244,241,235,.75)}}
+.ip-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:1.5rem 0}
+@media(max-width:580px){.ip-grid{grid-template-columns:1fr}}
+.ip-card{border-radius:14px;padding:1.25rem;border:0.5px solid #E0DDD6;background:#fff}
+@media(prefers-color-scheme:dark){.ip-card{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08)}}
+.ip-type{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:6px;color:#C42D8E}
+.ip-title{font-size:14px;font-weight:600;margin-bottom:6px;color:#0A0A0F}
+@media(prefers-color-scheme:dark){.ip-title{color:#F4F1EB}}
+.ip-body{font-size:12.5px;color:#666;line-height:1.65}
+@media(prefers-color-scheme:dark){.ip-body{color:rgba(244,241,235,.6)}}
+.ip-split{display:flex;align-items:center;gap:8px;margin-top:10px;padding-top:10px;border-top:0.5px solid #E8E4DC}
+@media(prefers-color-scheme:dark){.ip-split{border-color:rgba(255,255,255,.08)}}
+.ip-pill{padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.ip-50{background:#FBEAF0;color:#993556}
+.ip-ecqo{background:#E1F5EE;color:#0F6E56}
+.cta-block{background:#0A0A0F;border-radius:16px;padding:2.5rem;margin:2.5rem 0;text-align:center;border:1px solid rgba(196,45,142,.2);position:relative;overflow:hidden}
+.cta-block::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(196,45,142,.08),transparent 70%)}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:#fff;margin-bottom:12px;position:relative;z-index:1}
+.cta-body{font-size:14px;color:rgba(244,241,235,.65);max-width:520px;margin:0 auto 28px;line-height:1.8;position:relative;z-index:1}
+.cta-buttons{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-primary{padding:14px 36px;background:#C42D8E;color:#fff;font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:none;cursor:pointer;border-radius:4px;text-decoration:none;transition:all .2s ease;display:inline-block}
+.btn-primary:hover{background:#E8388A;transform:translateY(-1px)}
+.btn-secondary{padding:14px 36px;background:transparent;color:rgba(244,241,235,.8);font-family:'DM Sans',sans-serif;font-size:.85rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);cursor:pointer;border-radius:4px;text-decoration:none;transition:all .2s ease;display:inline-block}
+.btn-secondary:hover{border-color:rgba(196,45,142,.5);color:#C42D8E}
+footer{background:#0A0A0F;padding:48px 0;margin-top:60px}
+footer .inner{max-width:900px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:#fff}
+.footer-logo span{color:#C42D8E}
+.footer-note{font-size:.72rem;color:#6B6880;text-align:right;line-height:1.8}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <div class="logo">ECQO<span>.</span> Sound</div>
+    <div class="htag">Lead Producer Brief · Confidential · v4</div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="inner">
+    <div class="hero-eyebrow">A personal invitation from Bianca D. McCall, LMFT</div>
+    <h1 class="hero-title">Produce music once.<br><em>Earn on every play, forever.</em></h1>
+    <p class="hero-body">This is not a work-for-hire project with a fixed end date. This is a living catalog — music you produce that plays for members every single day, generating royalties as long as the platform runs. The more the platform grows, the more you earn. Here is everything you need to understand the opportunity, the creative brief, and what we are building together.</p>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val">24</div><div class="hs-lbl">Beta launch tracks</div></div>
+      <div class="hs"><div class="hs-val">64</div><div class="hs-lbl">Full catalog goal</div></div>
+      <div class="hs"><div class="hs-val">Pro<span>-rata</span></div><div class="hs-lbl">Royalty model</div></div>
+      <div class="hs"><div class="hs-val">∞</div><div class="hs-lbl">Passive income ceiling</div></div>
+    </div>
+  </div>
+</div>
+
+<main class="main">
+
+  <!-- HONEST ANSWERS -->
+  <span class="ey">Before anything else</span>
+  <h2>The questions you probably already have</h2>
+
+  <div class="aq">
+    <div class="aq-q">Is this a one-time project where I produce tracks and then I'm done?</div>
+    <div class="aq-a">Not exactly — and this is the important distinction. The catalog is ongoing. You are not being asked to produce a fixed number of tracks and walk away. You are being asked to build the foundation of a living music catalog that grows with the platform. Phase 1 gets us to launch. Phase 2 expands the catalog and brings in a network of producers you will lead and curate. Your tracks keep earning on every play indefinitely — but the creative work continues as the platform grows, on a pace we define together.</div>
+  </div>
+
+  <div class="aq">
+    <div class="aq-q">Are members going to listen to the same music on repeat forever?</div>
+    <div class="aq-a">No. New music drops on a consistent weekly release schedule — the same way a streaming platform releases new music every Friday. Members rate tracks, build personal playlists, and discover new releases. The catalog is always growing. What makes each daily listening experience unique is that the subliminal affirmation layer beneath your music is different every morning — AI-generated I AM declarations in each member's own cloned voice, personalized to their current clinical profile. Same music, different inner voice beneath it, every single day.</div>
+  </div>
+
+  <div class="aq">
+    <div class="aq-q">How does the royalty work — and how do I know I'll actually earn?</div>
+    <div class="aq-a">The royalty model is a <strong>pro-rata stream share</strong> — the same model Spotify and Apple Music use. A fixed percentage of Net Revenue is allocated as the Music Royalty Pool. Your earnings equal your tracks' share of total platform streams. The pool is capped — ECQO never pays more than the pool regardless of how many producers are in the catalog. As the Lead Producer setting the standard in Phase 1, your tracks will dominate early streaming. The full math is in the Income section below — with real numbers, no jargon.</div>
+  </div>
+
+  <div class="aq">
+    <div class="aq-q">How many tracks are we actually talking about for launch?</div>
+    <div class="aq-a">The beta launch catalog is <strong>24 tracks</strong> — 8 genres × 3 priority activity modes (Sleep, Morning, Workout) at one intensity level each. That is a real, launchable catalog that proves the concept and gets members paying from day one. The full vision is 64 tracks — all 8 genres × all 8 activity modes — built in phases as the platform generates revenue. Intensity level variations are a Phase 3 expansion. You do not produce that alone or all at once. And I want to talk about building a small team from the start — more on that in the timeline section.</div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- THE THREE LAYERS -->
+  <span class="ey">The Architecture</span>
+  <h2>What members hear — and exactly where your work lives</h2>
+
+  <div class="card">
+    <div class="fs">
+      <div class="fsn">1</div>
+      <div>
+        <div class="fst">Layer 1 — Subliminal Affirmations <span style="font-weight:400;color:#999">(ECQO generates · not your work)</span></div>
+        <div class="fsb">AI-generated I AM declarations in each member's own cloned voice. Mixed at −20dB to −30dB — inaudible to the conscious ear. Personalized daily from each member's clinical assessment results. Members never consciously hear this layer. It works beneath everything else. ECQO produces and delivers this automatically every morning.</div>
+      </div>
+    </div>
+    <div class="fs">
+      <div class="fsn">2</div>
+      <div>
+        <div class="fst">Layer 2 — Solfeggio Frequency Tones <span style="font-weight:400;color:#999">(ECQO generates · not your work)</span></div>
+        <div class="fsb">Binaural beats and Solfeggio tones tuned per activity mode. 528Hz for healing and morning. 639Hz for workout and driving. 174Hz for sleep. Embedded between your music and the subliminal layer. This is why BPM and tuning are clinically non-negotiable — the frequency layer must align with the brainwave state your music is guiding the member toward.</div>
+      </div>
+    </div>
+    <div class="fs">
+      <div class="fsn">3</div>
+      <div>
+        <div class="fst">Layer 3 — Music <span style="font-weight:400;color:#999">(Your work)</span></div>
+        <div class="fsb">Original compositions in the member's preferred genre, tuned to 432Hz, at activity-mode-specific BPM. The only layer the member consciously hears. Your music is the sonic home — the familiar cultural and emotional landscape — that makes the other two layers accessible to the nervous system. It is not background music. It is the delivery mechanism that makes the clinical treatment work.</div>
+        <span class="fso">Delivered as: Mixed master + dry stem set</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- LAYER 3 CREATIVE BRIEF -->
+  <span class="ey">Layer 3 — Your Creative Brief</span>
+  <h2>What you can do, what you cannot do, and why</h2>
+  <p>This section answers the creative questions directly — based on the science of subliminal audio therapy, binaural beat entrainment research, and therapeutic music design. These are not arbitrary rules. Every guardrail exists because violating it breaks the clinical mechanism.</p>
+
+  <div class="layer3-grid">
+    <div class="can-do">
+      <div class="can-title">You CAN include</div>
+      <div class="can-item"><span style="color:#1D9E75;flex-shrink:0">✓</span> Wordless vocals — humming, harmonizing, melodic runs without words</div>
+      <div class="can-item"><span style="color:#1D9E75;flex-shrink:0">✓</span> Instrumental ad libs — musical fills, riffs, production flourishes</div>
+      <div class="can-item"><span style="color:#1D9E75;flex-shrink:0">✓</span> Ambient sound textures — rain, nature sounds, spatial elements that do not demand attention</div>
+      <div class="can-item"><span style="color:#1D9E75;flex-shrink:0">✓</span> Atmospheric sound design — pads, reverb tails, textural layers</div>
+      <div class="can-item"><span style="color:#1D9E75;flex-shrink:0">✓</span> Gradual dynamic builds — slow, predictable arc from sparse to full and back</div>
+      <div class="can-item"><span style="color:#1D9E75;flex-shrink:0">✓</span> Genre-authentic texture — gospel choir breathiness, hip hop vinyl crackle, Latin guitar warmth</div>
+    </div>
+    <div class="cannot-do">
+      <div class="cannot-title">You CANNOT include</div>
+      <div class="cannot-item"><span style="color:#A32D2D;flex-shrink:0">✕</span> Lyrics — any conscious language in Layer 3 competes directly with the subliminal affirmations in Layer 1. The brain cannot process two simultaneous linguistic streams. Lyrics will always win. Affirmations lose. The treatment breaks.</div>
+      <div class="cannot-item"><span style="color:#A32D2D;flex-shrink:0">✕</span> Spoken word or vocal chanting with words — same reason</div>
+      <div class="cannot-item"><span style="color:#A32D2D;flex-shrink:0">✕</span> Jarring drops, hard transitions, or sudden sonic surprises — these snap the brain out of alpha/theta/delta state. Brainwave entrainment requires sonic predictability.</div>
+      <div class="cannot-item"><span style="color:#A32D2D;flex-shrink:0">✕</span> Dramatic tempo changes or key modulations — same reason. Consistency is the mechanism.</div>
+      <div class="cannot-item"><span style="color:#A32D2D;flex-shrink:0">✕</span> Third-party samples or licensed elements — creates IP complications for the platform and the Joint IP Agreement</div>
+    </div>
+  </div>
+
+  <div class="hl-amber">
+    <p><strong>The science behind the no-lyrics rule:</strong> Research in subliminal audio therapy (Budzynski 1977, Becker and Sheridan 1990, confirmed in multiple binaural beat studies) consistently demonstrates that conscious linguistic content in the foreground masks subliminal linguistic content. The music layer must be emotionally resonant but cognitively non-demanding — it occupies the emotional brain, not the language brain. Wordless vocals are permitted because they carry emotional resonance without semantic content.</p>
+  </div>
+
+  <div class="hl-green">
+    <p><strong>Your creative latitude is real:</strong> Within these guardrails, the emotional character, sonic texture, arrangement arc, genre authenticity, and production quality are entirely yours. A Gospel Healing track should feel unmistakably like gospel. A Hip Hop Workout track should feel unmistakably like hip hop. The clinical constraints shape the container. Your artistry fills it.</p>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- THREE INTENSITY LEVELS -->
+  <span class="ey">The Three Clinical Intensity Levels</span>
+  <h2>Three versions of every track. One for each member state.</h2>
+  <p>Every track is produced in three intensity levels — mild, moderate, and therapeutic — corresponding to the member's ECQO Risk Index score at the time of delivery. The platform automatically selects the correct version each morning. This is a clinically meaningful differentiator and a significant expansion of the creative brief.</p>
+
+  <div class="intensity-grid">
+    <div class="intensity-card mild">
+      <div class="int-label mild">Level 1 — Mild</div>
+      <div class="int-title">Maintenance</div>
+      <div class="int-body">Member is stable. Low existential concern. Music is uplifting, bright, energizing. Full arrangement. More dynamic movement. Feels like momentum and affirmation of an already-steady inner state.</div>
+      <div class="int-stat">
+        <div class="int-stat-val">≤ 2.0</div>
+        <div class="int-stat-lbl">ECQO Risk Index score</div>
+      </div>
+    </div>
+    <div class="intensity-card moderate">
+      <div class="int-label moderate">Level 2 — Moderate</div>
+      <div class="int-title">Support</div>
+      <div class="int-body">Member is experiencing unease. Some existential disruption present. Music is grounding, warm, steady. Slightly reduced tempo range. Fewer dynamic surprises. Feels like being steadied by a calm, familiar presence.</div>
+      <div class="int-stat">
+        <div class="int-stat-val">2.0–3.5</div>
+        <div class="int-stat-lbl">ECQO Risk Index score</div>
+      </div>
+    </div>
+    <div class="intensity-card deep">
+      <div class="int-label deep">Level 3 — Therapeutic</div>
+      <div class="int-title">Deep Regulation</div>
+      <div class="int-body">Member is in elevated disruption. Significant existential distress. Music is deeply calming, sparse, minimal. Slowest tempo range. Maximum space and silence. Feels like being held completely still until the nervous system can settle.</div>
+      <div class="int-stat">
+        <div class="int-stat-val">> 3.5</div>
+        <div class="int-stat-lbl">ECQO Risk Index score</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hl">
+    <p><strong>What this means for production:</strong> Each intensity level is not a separate song — it is a variation of the same compositional DNA. Think of it as three mixes: the full arrangement, a stripped arrangement, and a near-ambient version. The genre identity and emotional tone remain consistent across all three. The density, tempo, and dynamic range adjust to meet the member where they are clinically.</p>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- TECH SPECS -->
+  <span class="ey">Technical Requirements</span>
+  <h2>What every track needs to meet</h2>
+
+  <div class="card" style="overflow-x:auto">
+    <table>
+      <thead>
+        <tr><th>Activity mode</th><th>BPM range</th><th>Tuning</th><th>Target length</th><th>Frequency target</th><th>Brainwave state</th><th>Emotional tone</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Sleep</strong></td><td>50–65</td><td>432Hz</td><td>6–8 min</td><td>174Hz + 285Hz</td><td>Delta (0.5–4Hz)</td><td>Dissolving, releasing</td></tr>
+        <tr><td><strong>Morning</strong></td><td>65–75</td><td>432Hz</td><td>3–4 min</td><td>528Hz</td><td>Alpha (8–12Hz)</td><td>Opening, possibility</td></tr>
+        <tr><td><strong>Workout</strong></td><td>120–140</td><td>432Hz</td><td>3–4 min</td><td>639Hz</td><td>Beta (12–30Hz)</td><td>Power, activation</td></tr>
+        <tr><td><strong>Driving</strong></td><td>90–110</td><td>432Hz</td><td>3–4 min</td><td>639Hz</td><td>Beta (12–30Hz)</td><td>Forward motion, clarity</td></tr>
+        <tr><td><strong>Deep Work</strong></td><td>60–70</td><td>432Hz</td><td>4–6 min</td><td>432Hz</td><td>Alpha/Theta border</td><td>Focused, sustained</td></tr>
+        <tr><td><strong>Love+Family</strong></td><td>70–80</td><td>432Hz</td><td>3–5 min</td><td>528Hz + 639Hz</td><td>Alpha (8–12Hz)</td><td>Warmth, connection</td></tr>
+        <tr><td><strong>Abundance</strong></td><td>75–85</td><td>432Hz</td><td>3–4 min</td><td>528Hz</td><td>Alpha (8–12Hz)</td><td>Expansion, joy</td></tr>
+        <tr><td><strong>Healing</strong></td><td>55–65</td><td>432Hz</td><td>6–8 min</td><td>174Hz + 285Hz</td><td>Theta (4–8Hz)</td><td>Tender, held, safe</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="hl-amber">
+    <p><strong>On track length:</strong> Target lengths are calibrated by activity mode — not a one-size standard. Sleep and Healing tracks need 6–8 minutes because brainwave entrainment into delta and theta states requires sustained exposure. Active modes (Morning, Workout, Driving, Abundance) align with contemporary streaming norms of 3–4 minutes where engagement is the priority. The platform loops tracks seamlessly for longer sessions — so a 3-minute Workout track serves a 45-minute gym session through continuous looping without interruption.</p>
+    <p style="margin-top:8px"><strong>Tuning:</strong> A=432Hz must be set at the project level before recording a single note. Standard DAW default is A=440Hz. This is clinically and contractually non-negotiable.</p>
+    <p style="margin-top:8px"><strong>Delivery format:</strong> Mixed and mastered stereo WAV (24-bit, 48kHz) + dry instrumental stem set for each track.</p>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- SAMPLE BRIEFS -->
+  <span class="ey">Sample Production Briefs</span>
+  <h2>What a track brief looks like — three examples</h2>
+
+  <div class="suno-box">
+    <div class="suno-label">Example 1 — Gospel · Healing · Level 2 Moderate · Target: 6–8 min</div>
+    <div class="suno-prompt">Genre: Gospel soul — deeply tender, spiritually grounded, no lyrics
+Mood: Held, safe, wrapped in grace — nothing needs to be fixed or earned
+BPM: 62 (slow, spacious, unhurried — Level 2 moderate intensity)
+Tuning: A=432Hz at project level
+Instrumentation: Organ, soft choir (wordless humming only — no words), acoustic bass, warm Rhodes piano, generous reverb throughout
+Vocals: Wordless only — breathiness, melisma without semantic content
+Arrangement: Sparse 2-minute opening, builds slowly to full by minute 4, sustains, resolves back to sparse by minute 7
+Low-frequency treatment: Leave 100–300Hz intentionally open — ECQO frequency layer lives here
+Avoid: Lyrics, spoken word, hard drops, tempo changes, dramatic transitions
+Feel: Sitting in a quiet church alone at sunset. Nothing broken. Everything held.</div>
+    <div class="suno-note">After the draft: Your role is to give it human breath — refine the choir texture, adjust the organ warmth, shape the emotional arc. The draft is the skeleton. Your production decisions are what make it feel like it was made for that member specifically.</div>
+  </div>
+
+  <div class="suno-box">
+    <div class="suno-label">Example 2 — Hip Hop · Workout · Level 1 Mild · Target: 3–4 min</div>
+    <div class="suno-prompt">Genre: Hip hop instrumental — boom bap meets modern energy, no lyrics
+Mood: Locked in, powerful, elite athlete activation — unstoppable not aggressive
+BPM: 130 (steady, no tempo changes)
+Tuning: A=432Hz at project level
+Instrumentation: Hard 808, crisp snare, hi-hat pattern — no vocals, no sampled content — brass stabs or synth horns optional, minimal melody to leave cognitive space for the inner voice
+Arrangement: Clean intro, drops at bar 4, consistent energy — no breakdowns interrupting flow state
+Low-frequency treatment: 808 and kick present but controlled — intentional space in 150–250Hz
+Avoid: Lyrics, ad lib shouts, spoken word, jarring transitions, tempo drops
+Feel: The sound of someone who already knows they are going to win.</div>
+    <div class="suno-note">After the draft: Your 808 tuning choice, hi-hat swing, and sonic density define the emotional character here. Your athletic background is an asset — you know what elite activation feels like from the inside.</div>
+  </div>
+
+  <div class="suno-box">
+    <div class="suno-label">Example 3 — Latin · Morning · Level 1 Mild · Target: 3–4 min</div>
+    <div class="suno-prompt">Genre: Latin — contemporary, warm, morning optimism, no lyrics
+Mood: Gentle uplift, possibility, fresh start — not party energy
+BPM: 72 (relaxed but forward-moving)
+Tuning: A=432Hz at project level
+Instrumentation: Nylon string guitar, soft percussion (cajon or shaker), warm bass, optional light keys — no heavy brass, no club energy
+Vocals: None or wordless breath only
+Arrangement: Gentle intro, builds into warmth by minute 2, sustains peacefully
+Low-frequency treatment: Bass present but restrained — morning track, frequency layer needs room
+Avoid: Lyrics, hard transitions, dramatic builds
+Feel: The first quiet morning when everything feels possible.</div>
+    <div class="suno-note">After the draft: Focus on the warmth of the guitar tone and spaciousness of the arrangement. Members who select this track hear it every single morning. It needs to feel like home.</div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- MEMBERSHIP TIERS -->
+  <span class="ey">Where Your Music Lives</span>
+  <h2>Three tiers. Your catalog activates at Personalized.</h2>
+
+  <div class="tier-grid">
+    <div class="tier-card free">
+      <span class="tier-name free">Collective · Free</span>
+      <div class="tif"><span class="ck">✓</span> ECQO existential screener</div>
+      <div class="tif"><span class="ck">✓</span> Voice affirmations only</div>
+      <div class="tif"><span class="ck">✓</span> Basic dashboard + progress</div>
+      <div class="tif"><span class="cx">✕</span> <span style="color:#bbb">ECQO Sound music layer</span></div>
+      <div class="tif"><span class="cx">✕</span> <span style="color:#bbb">Genre selection</span></div>
+    </div>
+    <div style="border-radius:14px;padding:1.25rem;border:2px solid #C42D8E;background:#FFFFFF !important">
+      <span style="font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#C42D8E;display:block;margin-bottom:12px">Personalized · $19/mo</span>
+      <div style="font-size:12.5px;padding:6px 0;border-bottom:0.5px solid #D0CDCA;display:flex;align-items:flex-start;gap:8px;color:#0A0A0F !important;line-height:1.5"><span style="color:#C42D8E;flex-shrink:0;font-size:13px">✓</span><span style="color:#0A0A0F !important">Everything in Collective</span></div>
+      <div style="font-size:12.5px;padding:6px 0;border-bottom:0.5px solid #D0CDCA;display:flex;align-items:flex-start;gap:8px;color:#0A0A0F !important;line-height:1.5"><span style="color:#C42D8E;flex-shrink:0;font-size:13px;font-weight:700">✓</span><span style="color:#0A0A0F !important;font-weight:700">ECQO Sound music layer</span></div>
+      <div style="font-size:12.5px;padding:6px 0;border-bottom:0.5px solid #D0CDCA;display:flex;align-items:flex-start;gap:8px;color:#0A0A0F !important;line-height:1.5"><span style="color:#C42D8E;flex-shrink:0;font-size:13px;font-weight:700">✓</span><span style="color:#0A0A0F !important;font-weight:700">Genre selection per mode</span></div>
+      <div style="font-size:12.5px;padding:6px 0;border-bottom:0.5px solid #D0CDCA;display:flex;align-items:flex-start;gap:8px;color:#0A0A0F !important;line-height:1.5"><span style="color:#C42D8E;flex-shrink:0;font-size:13px">✓</span><span style="color:#0A0A0F !important">Voice cloning + playlist creation</span></div>
+      <div style="font-size:12.5px;padding:6px 0;display:flex;align-items:flex-start;gap:8px;color:#0A0A0F !important;line-height:1.5"><span style="color:#C42D8E;flex-shrink:0;font-size:13px">✓</span><span style="color:#0A0A0F !important">Track ratings + community</span></div>
+    </div>
+        <div class="tier-card elite">
+      <span class="tier-name elite">Elite · $29/mo</span>
+      <div class="tif"><span class="ck">✓</span> Everything in Personalized</div>
+      <div class="tif"><span class="ck" style="color:#E8388A">✓</span> <strong>Priority new genre access</strong></div>
+      <div class="tif"><span class="ck">✓</span> Weekly genre switching</div>
+      <div class="tif"><span class="ck">✓</span> Live sessions + Elite Lounge</div>
+      <div class="tif"><span class="ck">✓</span> Beta-Testers Lab early access</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ROYALTY MODEL — PLAIN LANGUAGE -->
+  <span class="ey">How You Get Paid — Plain Language</span>
+  <h2>The pro-rata royalty model, explained simply</h2>
+  <p>The royalty model used here is the same model that powers Spotify, Apple Music, and Tidal. It is designed so ECQO never pays more than it can afford regardless of how many producers are in the catalog — and so producers who make better tracks earn more.</p>
+
+  <div class="royalty-box">
+    <div class="royalty-title">How you get paid — in plain English</div>
+    <div class="royalty-sub">No jargon. Real numbers. Monthly.</div>
+    <div style="font-size:14px;color:rgba(244,241,235,.8);line-height:1.9">
+      <p style="color:rgba(244,241,235,.8);margin-bottom:16px">Every month, ECQO sets aside <strong style="color:#C42D8E">30% of Net Revenue</strong> specifically for producers. That is the Music Royalty Pool — it is ring-fenced before anything else happens. Net Revenue just means what comes in from subscriptions after payment fees and refunds.</p>
+      <p style="color:rgba(244,241,235,.8);margin-bottom:16px">Your share of that pool is based on how many plays your tracks received compared to all tracks on the platform that month. If your tracks accounted for half of all plays, you receive half the pool. If they accounted for a quarter, you receive a quarter. <strong style="color:#C42D8E">Better tracks earn more. More tracks earn more. Both are in your control.</strong></p>
+      <p style="color:rgba(244,241,235,.8);margin-bottom:16px">This model is the same one Spotify and Apple Music use — it is the music industry standard for platforms with multiple contributing artists. The difference here is that ECQO pays producers directly, every month, with a transparent statement showing plays per track and exactly how the pool was divided.</p>
+      <p style="color:rgba(244,241,235,.8);margin:0"><strong style="color:#C42D8E">Payment is monthly</strong> — not quarterly. You see what your tracks earned and receive payment within 15 days of the end of each calendar month.</p>
+    </div>
+  </div>
+
+  <div class="hl-green">
+    <p><strong>Why this protects everyone:</strong> Because the pool is capped at 30% of revenue, ECQO can never be bankrupted by royalties no matter how many producers join the catalog. Because your earnings are based on your share of streams — not a fixed percentage of all revenue — you benefit directly from producing tracks that members love and play repeatedly. Quality is rewarded. Volume is rewarded. Both are in your control.</p>
+  </div>
+
+  <h3>Income scenarios — what your stream share looks like at scale</h3>
+  <p>These scenarios assume your tracks represent 60% of all streams in Phase 1 (you are the only producer, your tracks dominate) and illustrate how that dilutes naturally to around 30% as the Phase 2 producer network grows — while your absolute earnings still grow with the platform.</p>
+
+  <div class="income-scenario">
+    <div class="isc">
+      <div class="isc-member">500 Personalized members</div>
+      <div class="isc-mrr">$9,500 MRR</div>
+      <div class="isc-pool">Pool: $2,850/mo</div>
+      <div class="isc-earn">$1,710</div>
+      <div class="isc-earn-lbl">your monthly earnings</div>
+      <div class="isc-note">At 60% stream share in Phase 1 — you are the primary producer</div>
+    </div>
+    <div class="isc">
+      <div class="isc-member">2,500 Personalized members</div>
+      <div class="isc-mrr">$47,500 MRR</div>
+      <div class="isc-pool">Pool: $14,250/mo</div>
+      <div class="isc-earn">$5,700</div>
+      <div class="isc-earn-lbl">your monthly earnings</div>
+      <div class="isc-note">At 40% stream share as network producers join</div>
+    </div>
+    <div class="isc">
+      <div class="isc-member">10,000 Personalized members</div>
+      <div class="isc-mrr">$190,000 MRR</div>
+      <div class="isc-pool">Pool: $57,000/mo</div>
+      <div class="isc-earn">$17,100</div>
+      <div class="isc-earn-lbl">your monthly earnings</div>
+      <div class="isc-note">At 30% stream share at full catalog scale</div>
+    </div>
+  </div>
+
+  <div class="hl">
+    <p><strong>The key insight:</strong> Even as your percentage share of streams dilutes from 60% to 30% as the network grows, your absolute monthly earnings grow significantly because the revenue pool grows faster than your dilution. You earn more by doing nothing additional — simply because the platform scales.</p>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- PRODUCER NETWORK -->
+  <span class="ey">Phase 2 — The Producer Network</span>
+  <h2>You build the catalog. You lead the network.</h2>
+
+  <div class="prod-model">
+    <div class="pm lead">
+      <div class="pm-role">Your Role · Phase 1 + 2</div>
+      <div class="pm-title">Lead Producer + A&R Director</div>
+      <div class="pm-item"><span>✦</span> Produce Phase 1 launch catalog</div>
+      <div class="pm-item"><span>✦</span> Set the production standard</div>
+      <div class="pm-item"><span>✦</span> Review + approve all submissions</div>
+      <div class="pm-item"><span>✦</span> Earn pro-rata share on your tracks</div>
+      <div class="pm-item"><span>✦</span> Earn curation fee on network tracks</div>
+      <div class="pm-item"><span>✦</span> Build genre specialist roster</div>
+      <div class="pm-share">Pro-rata</div>
+      <div class="pm-share-lbl">share of your tracks' streams + curation fee on network</div>
+    </div>
+    <div class="pm network">
+      <div class="pm-role">Network · Phase 2</div>
+      <div class="pm-title">Independent Producers</div>
+      <div class="pm-item"><span style="color:#185FA5">→</span> SoundBetter, Fiverr, Reddit</div>
+      <div class="pm-item"><span style="color:#185FA5">→</span> Instagram, genre communities</div>
+      <div class="pm-item"><span style="color:#185FA5">→</span> Submit per ECQO Sound spec</div>
+      <div class="pm-item"><span style="color:#185FA5">→</span> You review + approve quality</div>
+      <div class="pm-item"><span style="color:#185FA5">→</span> Earn pro-rata on their streams</div>
+      <div class="pm-share">Pro-rata</div>
+      <div class="pm-share-lbl">share of their tracks' streams</div>
+    </div>
+    <div class="pm ecqo">
+      <div class="pm-role">ECQO Holdings</div>
+      <div class="pm-title">Platform + Infrastructure</div>
+      <div class="pm-item"><span style="color:#1D9E75">→</span> Platform, clinical layer, delivery</div>
+      <div class="pm-item"><span style="color:#1D9E75">→</span> Marketing + member acquisition</div>
+      <div class="pm-item"><span style="color:#1D9E75">→</span> Production briefs + specs</div>
+      <div class="pm-item"><span style="color:#1D9E75">→</span> Joint IP Agreement + legal</div>
+      <div class="pm-item"><span style="color:#1D9E75">→</span> Monthly royalty statements + payment</div>
+      <div class="pm-share">70%</div>
+      <div class="pm-share-lbl">of Net Revenue after pool allocation</div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- TIMELINE -->
+  <span class="ey">The Timeline — A Conversation</span>
+  <h2>My target is June 1st. I want your input.</h2>
+
+  <div class="conv-box">
+    <div class="conv-label">
+      <span style="width:8px;height:8px;border-radius:50%;background:#185FA5;flex-shrink:0;display:inline-block"></span>
+      From Bianca
+    </div>
+    <div class="conv-title">I have a target. You have a life. Let's find what works for both.</div>
+    <p>The beta launch catalog is <strong>24 tracks</strong> — 8 genres × 3 priority modes (Sleep, Morning, Workout). That is the realistic number to get paying members on the platform and the royalty clock running for everyone.<br><br>And I want to be honest with you — I do not think one person should carry this alone from the jump. I am open to you bringing in 2 or 3 producers who specialize in the genres you are less deep in. Collectively you build the 24 tracks together, everyone earns from day one, and the catalog is stronger because the genre authenticity is real. Tell me your thoughts on that — and look at the table below for what different team sizes and paces look like getting to June 1st.</p>
+  </div>
+
+  <div class="card" style="overflow-x:auto">
+    <table>
+      <thead>
+        <tr><th>Team size</th><th>Tracks per person/week</th><th>Total tracks/week</th><th>24 tracks complete</th><th>ECQO Sound launch</th><th>Pace</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>You alone</strong></td><td>2–3/week</td><td>2–3</td><td>8–12 weeks</td><td>Late June – July</td><td><span class="pb pb-s">Manageable</span></td></tr>
+        <tr><td><strong>You + 1 producer</strong></td><td>2–3/week each</td><td>4–6</td><td>4–6 weeks</td><td>Mid-June</td><td><span class="pb pb-a">Ambitious</span></td></tr>
+        <tr class="feat"><td><strong>You + 2 producers</strong></td><td>2–3/week each</td><td>6–9</td><td>3–4 weeks</td><td><strong>June 1st</strong> <span class="tbadge">Preferred Target</span></td><td><span class="pb pb-a">Realistic</span></td></tr>
+        <tr><td><strong>You + 3 producers</strong></td><td>2/week each</td><td>8</td><td>3 weeks</td><td>Late May</td><td><span class="pb pb-r">Comfortable</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="font-size:12.5px;color:#888;margin-top:8px">Track time estimate: 3–5 hours of focused studio time per track. Each producer earns from the moment their first track is played — retroactive to launch day. Nobody waits for a big check at the end. The pool pays monthly as soon as members are streaming.</p>
+
+  <div class="hl">
+    <p><strong>What I need from you:</strong> What is your honest read on the 24-track beta launch catalog? Is 3–5 hours per track accurate for how you work? Do you have producers in your network who could come in on specific genres — Hip Hop, Gospel, Latin, Lo-fi — so the load is shared and the genre authenticity is real? Everyone gets paid from the same monthly pool from day one. Tell me what you see. Tell me what you would change. This is our first collaboration and I want to start it right.</p>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- IP + FILING FEES -->
+  <span class="ey">Protecting Both of Us — IP and Filing Fees</span>
+  <h2>Fair, transparent, shared.</h2>
+  <p>The Joint IP Agreement covers ownership and royalties. This section covers the filing fees — what it costs to formally protect the Works, and how we split those costs fairly based on who benefits from each filing.</p>
+
+  <div class="ip-grid">
+    <div class="ip-card">
+      <div class="ip-type">Copyright Registration</div>
+      <div class="ip-title">Original Music Compositions</div>
+      <div class="ip-body">Registers each track with the U.S. Copyright Office. Strengthens your ability to enforce ownership and claim statutory damages in infringement cases. ~$65 per work through the Copyright Office. Both parties benefit equally from registered copyright.</div>
+      <div class="ip-split">
+        <span class="ip-pill ip-50">50% Bianca</span>
+        <span class="ip-pill ip-50">50% Producer</span>
+        <span style="font-size:11px;color:#888;margin-left:4px">Split equally — joint benefit</span>
+      </div>
+    </div>
+    <div class="ip-card">
+      <div class="ip-type">Trademark Filings</div>
+      <div class="ip-title">ECQO Sound Brand Marks</div>
+      <div class="ip-body">Protects the ECQO Sound brand, HERR product name, and related marks. This is ECQO Holdings brand IP — not the music compositions. The producer does not co-own brand trademarks.</div>
+      <div class="ip-split">
+        <span class="ip-pill ip-ecqo">100% ECQO Holdings</span>
+        <span style="font-size:11px;color:#888;margin-left:4px">Brand IP — ECQO only</span>
+      </div>
+    </div>
+    <div class="ip-card">
+      <div class="ip-type">Patent Filing</div>
+      <div class="ip-title">ECQO Sound Methodology</div>
+      <div class="ip-body">Covers the three-layer audio delivery system, clinical assessment-to-music routing, and three-tier intensity methodology. This is the ECQO clinical system — not the music compositions themselves. The producer does not co-own the methodology patent.</div>
+      <div class="ip-split">
+        <span class="ip-pill ip-ecqo">100% ECQO Holdings</span>
+        <span style="font-size:11px;color:#888;margin-left:4px">System IP — ECQO only</span>
+      </div>
+    </div>
+    <div class="ip-card">
+      <div class="ip-type">Attorney Review</div>
+      <div class="ip-title">Joint IP Agreement Review</div>
+      <div class="ip-body">Both parties should have the Joint IP Agreement reviewed by a licensed attorney before signing. Both parties benefit equally from this review — it protects the agreement for everyone. We strongly encourage you to retain independent counsel.</div>
+      <div class="ip-split">
+        <span class="ip-pill ip-50">50% Bianca</span>
+        <span class="ip-pill ip-50">50% Producer</span>
+        <span style="font-size:11px;color:#888;margin-left:4px">Shared benefit — split equally</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- ECQO SOUND STUDIO PRESENTS -->
+  <span class="ey">An Invitation — Not a Requirement</span>
+  <h2>ECQO Sound Studio Presents:<br><em>A Moment for Music</em></h2>
+  <p>This is not in the contract. It is not a deliverable. It is an invitation — because if you say yes, it makes the music more powerful, protects both of us more completely, and turns every track release into a content moment that drives people to the platform.</p>
+
+  <div style="background:#0A0A0F;border-radius:16px;padding:2rem;margin:1.5rem 0;border:1px solid rgba(196,45,142,.2)">
+    <div style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;color:#fff;margin-bottom:6px">The concept</div>
+    <p style="color:rgba(244,241,235,.7);font-size:14px;line-height:1.8;margin-bottom:0">For each track you produce, record a short — 60 to 90 seconds — of you in the studio making a real production decision. Not a polished video. Not a performance. A genuine moment: choosing a chord voicing, adjusting the 808 tuning, layering the choir, talking through why you made a specific creative choice for that activity mode. Branded as <strong style="color:#C42D8E">ECQO Sound Studio Presents: A Moment for Music.</strong> Distributed on TikTok, Instagram Reels, YouTube Shorts, and inside HERR Nation — with every post driving people to the app.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:1.5rem 0">
+    <div style="background:#F0FBF4;border:0.5px solid rgba(29,158,117,.2);border-radius:14px;padding:1.5rem">
+      <div style="font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#1D9E75;margin-bottom:10px">Why it protects you</div>
+      <p style="font-size:13.5px;color:#085041;line-height:1.75;margin-bottom:10px">Under current U.S. copyright law, AI-assisted work must demonstrate substantial human creative authorship to be protected. A behind-the-scenes video of you at the DAW making real production decisions is timestamped, visual, and irrefutable documentation of that authorship.</p>
+      <p style="font-size:13.5px;color:#085041;line-height:1.75;margin-bottom:10px">It is better than a session file. Better than a signed statement. Better than any written record. It is a documented creative act — showing exactly what you decided, when, and why. If anyone ever challenges the copyright on a track, that video is your evidence.</p>
+      <p style="font-size:13.5px;color:#085041;line-height:1.75;margin:0">Every short you post is a timestamped copyright record that lives on the public internet forever.</p>
+    </div>
+    <div style="background:#FDF5FA;border:0.5px solid rgba(196,45,142,.2);border-radius:14px;padding:1.5rem">
+      <div style="font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#C42D8E;margin-bottom:10px">Why it grows the platform</div>
+      <p style="font-size:13.5px;color:#7B2D8B;line-height:1.75;margin-bottom:10px">"How I made this beat" content is one of the highest-performing categories on TikTok and Instagram Reels. Producers with millions of followers built their entire audience on exactly this format.</p>
+      <p style="font-size:13.5px;color:#7B2D8B;line-height:1.75;margin-bottom:10px">ECQO Sound has a story no other producer content has — the science layer, the clinical purpose, the subliminal technology beneath the music. That is not just a beat-making video. That is a documentary moment. Every short drives curiosity. Curiosity drives downloads.</p>
+      <p style="font-size:13.5px;color:#7B2D8B;line-height:1.75;margin:0">HERR Nation members who see the person behind their daily affirmation track feel a human connection that keeps them subscribed.</p>
+    </div>
+  </div>
+
+  <h3>What a Moment for Music looks like</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:1rem 0 1.5rem">
+    <div class="card" style="text-align:center;padding:1.25rem">
+      <div style="font-size:1.5rem;margin-bottom:10px">&#127929;</div>
+      <div style="font-size:13px;font-weight:600;color:#0A0A0F;margin-bottom:6px">The Production Moment</div>
+      <div style="font-size:12px;color:#666;line-height:1.6">You at the DAW. A real decision — choosing the gospel choir voicing, dialing the 808 for Workout, finding the nylon guitar tone for Latin Morning. 60 seconds. Authentic. Unscripted.</div>
+    </div>
+    <div class="card" style="text-align:center;padding:1.25rem">
+      <div style="font-size:1.5rem;margin-bottom:10px">&#129516;</div>
+      <div style="font-size:13px;font-weight:600;color:#0A0A0F;margin-bottom:6px">The Science Moment</div>
+      <div style="font-size:12px;color:#666;line-height:1.6">In your own words — why a creative choice serves the clinical purpose. "I kept the bass low here because there is a frequency layer beneath this that needs space." Nobody else is saying that anywhere on the internet.</div>
+    </div>
+    <div class="card" style="text-align:center;padding:1.25rem">
+      <div style="font-size:1.5rem;margin-bottom:10px">&#127911;</div>
+      <div style="font-size:13px;font-weight:600;color:#0A0A0F;margin-bottom:6px">The Sneak Peek</div>
+      <div style="font-size:12px;color:#666;line-height:1.6">A 15-second preview of the finished track beneath your voice. End with the ECQO Sound logo and a CTA — "Available now in the HERR app." Direct pipeline from content to download.</div>
+    </div>
+  </div>
+
+  <div style="background:#F4F1EB;border-radius:12px;padding:1.25rem 1.5rem;margin-bottom:1.5rem">
+    <div style="font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#C42D8E;font-weight:600;margin-bottom:10px">Sample caption</div>
+    <div style="font-family:'DM Mono',monospace;font-size:12.5px;color:#3A3A42;line-height:1.9">This track plays for HERR members every morning at 4AM.
+They never hear my name. But they feel it.
+
+Gospel Healing — Level 2. For the ones who need to be held right now.
+
+Download the HERR app. Link in bio.
+
+#ECQOSound #MomentForMusic #HERRApp #TherapeuticMusic #ProducerLife</div>
+  </div>
+
+  <div class="hl">
+    <p><strong>The distribution plan:</strong> Each Moment for Music short posts to TikTok, Instagram Reels, YouTube Shorts, and Facebook Reels simultaneously. ECQO amplifies and reposts. HERR Nation members get early access before public release — making them feel like insiders. Every caption ends with the app download link. The short is marketing and membership content at the same time.</p>
+    <p style="margin-top:8px"><strong>Your creative control is total:</strong> Format, vibe, how much you share, how you present — all yours. The only consistent elements are the ECQO Sound Studio Presents brand frame at the start and the app CTA at the end. Everything in between is your voice, your studio, your story.</p>
+  </div>
+
+  <div class="div"></div>
+
+  <!-- DELIVERY CHECKLIST -->
+  <span class="ey">Per-Track Delivery</span>
+  <h2>Before submitting each track</h2>
+
+  <div class="card" id="checklist-wrap"></div>
+
+  <div class="div"></div>
+
+  <!-- CLOSING CTA -->
+  <div class="cta-block">
+    <div class="cta-title">This is not background music.<br>It is clinical infrastructure in sonic form.</div>
+    <p class="cta-body">Every track you produce is heard during one of the most intimate parts of someone's day — sleeping, healing, working out, driving alone, getting ready in the morning. Members will not know the subliminal layer is working beneath your music. They will only know it feels different — like it was made for them. That feeling is your work. The science beneath it is mine. Together we are building something no one else has built.</p>
+    <div class="cta-buttons">
+      <button class="btn-primary" onclick="openIPModal()">Review the Joint IP Agreement</button>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <div>
+      <div class="footer-logo">ECQO<span>.</span> Sound</div>
+      <div style="font-size:.72rem;color:#6B6880;margin-top:4px">A division of ECQO Holdings</div>
+    </div>
+    <div class="footer-note">
+      Bianca D. McCall, LMFT — Founder and CEO<br>
+      ECQO Holdings · h3rr.com<br>
+      Lead Producer Brief v4 · Confidential
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<!-- IP AGREEMENT MODAL -->
+<div id="ip-modal" onclick="if(event.target===this)closeIPModal()" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(10,10,15,.92);z-index:99999;align-items:center;justify-content:center;overflow-y:auto">
+  <div style="width:100%;max-width:640px;background:#0F0F18;border:1px solid rgba(196,45,142,.3);border-radius:14px;padding:48px;position:relative;margin:24px auto">
+    <button onclick="closeIPModal()" style="position:absolute;top:16px;right:20px;background:none;border:none;color:#6B6880;font-size:1.4rem;cursor:pointer;line-height:1">&#x2715;</button>
+    <div style="font-family:'DM Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:#C42D8E;margin-bottom:14px">ECQO Holdings &middot; Joint IP Agreement</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:#fff;margin-bottom:8px;line-height:1.2">Ready to move forward?</div>
+    <p style="font-size:13.5px;color:rgba(244,241,235,.65);line-height:1.8;margin-bottom:28px">Download the Joint IP Agreement and share it with your attorney before signing. Fill in your legal name and return a signed copy to begin the collaboration officially.</p>
+    <div style="margin-bottom:28px">
+      <a href="ECQO_Holdings_Joint_IP_Agreement_HERR_Audio.docx" download style="display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(196,45,142,.1);border:1px solid rgba(196,45,142,.3);border-radius:10px;text-decoration:none">
+        <span style="font-size:1.4rem">&#128196;</span>
+        <div>
+          <div style="font-size:13.5px;font-weight:600;color:#fff;margin-bottom:2px">Download Joint IP Agreement</div>
+          <div style="font-size:12px;color:#6B6880">ECQO_Holdings_Joint_IP_Agreement_HERR_Audio.docx</div>
+        </div>
+        <span style="margin-left:auto;color:#C42D8E;font-size:1.1rem">&#8595;</span>
+      </a>
+    </div>
+    <div style="border-top:0.5px solid rgba(255,255,255,.08);padding-top:20px">
+      <div style="font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:#6B6880;margin-bottom:10px">Questions? Reach out directly</div>
+      <a href="mailto:mccall.bianca@gmail.com?subject=ECQO Sound - Joint IP Agreement" style="font-size:13.5px;color:#C42D8E;text-decoration:none">mccall.bianca@gmail.com</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function openIPModal(){
+  var m=document.getElementById('ip-modal');
+  m.style.display='flex';
+  document.body.style.overflow='hidden';
+}
+function closeIPModal(){
+  document.getElementById('ip-modal').style.display='none';
+  document.body.style.overflow='';
+}
+</script>
+</body>
+</html>
